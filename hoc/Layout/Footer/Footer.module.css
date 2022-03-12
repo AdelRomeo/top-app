@@ -1,11 +1,26 @@
 .footer {
   display: grid;
-  grid-template-columns: 1fr 260px 298px;
+  grid-template-columns: minmax(max-content, 1fr) auto auto;
   grid-template-rows: 72px;
   align-items: center;
-  grid-template-areas: 'rules agreement confidentiality';
+  gap: 40px;
   background: var(--primary);
   color: var(--white);
   font-size: 16px;
   line-height: 21px;
+  padding: 0 32px;
+}
+
+.footer a:hover {
+  color: var(--gray-light);
+}
+
+@media (max-width: 765px) {
+  .footer {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto auto;
+    justify-items: center;
+    padding: 10px 0;
+    gap: 10px;
+  }
 }
